@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/regina/Desktop/CPP_05/ex00/Bureaucrat.cpp
+Bureaucrat.hpp
+/Users/regina/Desktop/CPP_05/ex00/Bureaucrat.hpp
+
+/Users/regina/Desktop/CPP_05/ex00/Bureaucrat.hpp
+iostream
+-
+
