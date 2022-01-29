@@ -9,7 +9,7 @@ ShrubberyCreationForm::ShrubberyCreationForm()
     std::cout << "Constructor for ShruberyCreationForm called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : Form(name, 145, 137) {}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : Form(name, 144, 136) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &s) : Form(s) {}
 
@@ -27,7 +27,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
     Form::execute(executor);
-    if (this->getGradeToExecute() < 137 && this->getGradeToSign() < 145)
+    if (this->getGradeToExecute() <= 137 && this->getGradeToSign() <= 145)
         this->CreateTree();
     else
         throw Form::GradeTooLowException();
@@ -35,7 +35,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 
 void ShrubberyCreationForm::CreateTree() const
 {
-    std::ofstream fout("./" + _target);
+    std::ofstream fout(_target + "_shrubbery");
     fout << "          ^            \n"
             "         /@\\           \n"
             "        /@@@\\          \n"

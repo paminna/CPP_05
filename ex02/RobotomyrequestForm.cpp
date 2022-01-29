@@ -29,14 +29,14 @@ void RobotomyRequestForm::isRobotomized() const
 {
     int ran = std::rand();
     if (ran % 2)
-        std::cout << _target << " robotomized" << std::endl;
+        std::cout << _target << "robotomized" << std::endl;
     else
-        std::cout << _target << " faled robotomized" << std::endl;
+        std::cout << _target << "faled robotomized" << std::endl;
 }
 
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
     Form::execute(executor);
-    if (this->getGradeToSign() < 72 && this->getGradeToExecute() < 45)
+    if (this->getGradeToSign() <= 72 && this->getGradeToExecute() <= 45)
     {
         std::cout << "Bububu bibibi bububu bibibi" << std::endl;
         isRobotomized();

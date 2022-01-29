@@ -5,14 +5,11 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(): _name("noname"), _gradeToSign(0), _gradeToExecute(0)
-{
-    _isSigned = false;
-    std::cout << "Constructor for Form called" << std::endl;
-}
+Form::Form(): _name("noname"), _gradeToSign(0), _gradeToExecute(0) {}
 
 Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
+    _isSigned = false;
     if (_gradeToExecute < 1 || _gradeToSign < 1)
         throw Form::GradeTooHighException();
     else if (_gradeToSign > 150 || _gradeToExecute > 150)
@@ -50,10 +47,7 @@ Form& Form::operator=(const Form &form)
     return *this;
 }
 
-Form::~Form()
-{
-    std::cout << "Destructor for Form called" << std::endl;
-}
+Form::~Form() {}
 
 const char *Form::GradeTooHighException::what() const throw() {
     return "GradeTooHigh";
