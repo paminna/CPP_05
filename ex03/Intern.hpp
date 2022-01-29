@@ -5,6 +5,10 @@
 #ifndef CPP_05_INTERN_HPP
 #define CPP_05_INTERN_HPP
 
+#define presidental pardon 0
+#define robotomy request 1
+#define shrubbery creation 2
+
 #include "Form.hpp"
 #include <iostream>
 

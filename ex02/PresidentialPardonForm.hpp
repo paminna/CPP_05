@@ -8,17 +8,17 @@
 #include "Form.hpp"
 #include <iostream>
 
-class PresidentalPardonForm {
+class PresidentialPardonForm: public Form {
 public:
-    PresidentalPardonForm();
-    PresidentalPardonForm(PresidentalPardonForm &);
-    PresidentalPardonForm(std::string target);
-    PresidentalPardonForm &operator=(PresidentalPardonForm &);
-    ~PresidentalPardonForm();
+    PresidentialPardonForm();
+    PresidentialPardonForm(PresidentialPardonForm &);
+    PresidentialPardonForm(std::string target);
+    PresidentialPardonForm &operator=(PresidentialPardonForm &);
+    ~PresidentialPardonForm();
     void isPardoned(Form &form);
     void execute (Bureaucrat const &executor) const;
 private:
-    int _target;
+    std::string _target;
 };
 
 

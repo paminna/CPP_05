@@ -7,6 +7,9 @@
 
 
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 public:
@@ -28,7 +31,8 @@ public:
     {
         const char *what() const throw();
     };
-    void executingForm(Form const &form);
+    void executeForm(Form const &form);
+    void signForm(Form &form);
 private:
     const std::string _name;
     int _grade;

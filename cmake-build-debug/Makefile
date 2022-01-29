@@ -131,6 +131,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named ex02
+
+# Build rule for target.
+ex02: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex02
+.PHONY : ex02
+
+# fast build rule for target.
+ex02/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/build
+.PHONY : ex02/fast
+
+#=============================================================================
 # Target rules for targets named ex01
 
 # Build rule for target.
@@ -291,6 +304,168 @@ ex01/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex01.dir/build.make CMakeFiles/ex01.dir/ex01/main.cpp.s
 .PHONY : ex01/main.cpp.s
 
+ex02/Bureaucrat.o: ex02/Bureaucrat.cpp.o
+
+.PHONY : ex02/Bureaucrat.o
+
+# target to build an object file
+ex02/Bureaucrat.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/Bureaucrat.cpp.o
+.PHONY : ex02/Bureaucrat.cpp.o
+
+ex02/Bureaucrat.i: ex02/Bureaucrat.cpp.i
+
+.PHONY : ex02/Bureaucrat.i
+
+# target to preprocess a source file
+ex02/Bureaucrat.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/Bureaucrat.cpp.i
+.PHONY : ex02/Bureaucrat.cpp.i
+
+ex02/Bureaucrat.s: ex02/Bureaucrat.cpp.s
+
+.PHONY : ex02/Bureaucrat.s
+
+# target to generate assembly for a file
+ex02/Bureaucrat.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/Bureaucrat.cpp.s
+.PHONY : ex02/Bureaucrat.cpp.s
+
+ex02/Form.o: ex02/Form.cpp.o
+
+.PHONY : ex02/Form.o
+
+# target to build an object file
+ex02/Form.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/Form.cpp.o
+.PHONY : ex02/Form.cpp.o
+
+ex02/Form.i: ex02/Form.cpp.i
+
+.PHONY : ex02/Form.i
+
+# target to preprocess a source file
+ex02/Form.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/Form.cpp.i
+.PHONY : ex02/Form.cpp.i
+
+ex02/Form.s: ex02/Form.cpp.s
+
+.PHONY : ex02/Form.s
+
+# target to generate assembly for a file
+ex02/Form.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/Form.cpp.s
+.PHONY : ex02/Form.cpp.s
+
+ex02/PresidentialPardonForm.o: ex02/PresidentialPardonForm.cpp.o
+
+.PHONY : ex02/PresidentialPardonForm.o
+
+# target to build an object file
+ex02/PresidentialPardonForm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/PresidentialPardonForm.cpp.o
+.PHONY : ex02/PresidentialPardonForm.cpp.o
+
+ex02/PresidentialPardonForm.i: ex02/PresidentialPardonForm.cpp.i
+
+.PHONY : ex02/PresidentialPardonForm.i
+
+# target to preprocess a source file
+ex02/PresidentialPardonForm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/PresidentialPardonForm.cpp.i
+.PHONY : ex02/PresidentialPardonForm.cpp.i
+
+ex02/PresidentialPardonForm.s: ex02/PresidentialPardonForm.cpp.s
+
+.PHONY : ex02/PresidentialPardonForm.s
+
+# target to generate assembly for a file
+ex02/PresidentialPardonForm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/PresidentialPardonForm.cpp.s
+.PHONY : ex02/PresidentialPardonForm.cpp.s
+
+ex02/RobotomyRequestForm.o: ex02/RobotomyRequestForm.cpp.o
+
+.PHONY : ex02/RobotomyRequestForm.o
+
+# target to build an object file
+ex02/RobotomyRequestForm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/RobotomyRequestForm.cpp.o
+.PHONY : ex02/RobotomyRequestForm.cpp.o
+
+ex02/RobotomyRequestForm.i: ex02/RobotomyRequestForm.cpp.i
+
+.PHONY : ex02/RobotomyRequestForm.i
+
+# target to preprocess a source file
+ex02/RobotomyRequestForm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/RobotomyRequestForm.cpp.i
+.PHONY : ex02/RobotomyRequestForm.cpp.i
+
+ex02/RobotomyRequestForm.s: ex02/RobotomyRequestForm.cpp.s
+
+.PHONY : ex02/RobotomyRequestForm.s
+
+# target to generate assembly for a file
+ex02/RobotomyRequestForm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/RobotomyRequestForm.cpp.s
+.PHONY : ex02/RobotomyRequestForm.cpp.s
+
+ex02/ShrubberyCreationForm.o: ex02/ShrubberyCreationForm.cpp.o
+
+.PHONY : ex02/ShrubberyCreationForm.o
+
+# target to build an object file
+ex02/ShrubberyCreationForm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/ShrubberyCreationForm.cpp.o
+.PHONY : ex02/ShrubberyCreationForm.cpp.o
+
+ex02/ShrubberyCreationForm.i: ex02/ShrubberyCreationForm.cpp.i
+
+.PHONY : ex02/ShrubberyCreationForm.i
+
+# target to preprocess a source file
+ex02/ShrubberyCreationForm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/ShrubberyCreationForm.cpp.i
+.PHONY : ex02/ShrubberyCreationForm.cpp.i
+
+ex02/ShrubberyCreationForm.s: ex02/ShrubberyCreationForm.cpp.s
+
+.PHONY : ex02/ShrubberyCreationForm.s
+
+# target to generate assembly for a file
+ex02/ShrubberyCreationForm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/ShrubberyCreationForm.cpp.s
+.PHONY : ex02/ShrubberyCreationForm.cpp.s
+
+ex02/main.o: ex02/main.cpp.o
+
+.PHONY : ex02/main.o
+
+# target to build an object file
+ex02/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/main.cpp.o
+.PHONY : ex02/main.cpp.o
+
+ex02/main.i: ex02/main.cpp.i
+
+.PHONY : ex02/main.i
+
+# target to preprocess a source file
+ex02/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/main.cpp.i
+.PHONY : ex02/main.cpp.i
+
+ex02/main.s: ex02/main.cpp.s
+
+.PHONY : ex02/main.s
+
+# target to generate assembly for a file
+ex02/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/ex02/main.cpp.s
+.PHONY : ex02/main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -301,6 +476,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ex00"
 	@echo "... ex01"
+	@echo "... ex02"
 	@echo "... ex00/Bureaucrat.o"
 	@echo "... ex00/Bureaucrat.i"
 	@echo "... ex00/Bureaucrat.s"
@@ -316,6 +492,24 @@ help:
 	@echo "... ex01/main.o"
 	@echo "... ex01/main.i"
 	@echo "... ex01/main.s"
+	@echo "... ex02/Bureaucrat.o"
+	@echo "... ex02/Bureaucrat.i"
+	@echo "... ex02/Bureaucrat.s"
+	@echo "... ex02/Form.o"
+	@echo "... ex02/Form.i"
+	@echo "... ex02/Form.s"
+	@echo "... ex02/PresidentialPardonForm.o"
+	@echo "... ex02/PresidentialPardonForm.i"
+	@echo "... ex02/PresidentialPardonForm.s"
+	@echo "... ex02/RobotomyRequestForm.o"
+	@echo "... ex02/RobotomyRequestForm.i"
+	@echo "... ex02/RobotomyRequestForm.s"
+	@echo "... ex02/ShrubberyCreationForm.o"
+	@echo "... ex02/ShrubberyCreationForm.i"
+	@echo "... ex02/ShrubberyCreationForm.s"
+	@echo "... ex02/main.o"
+	@echo "... ex02/main.i"
+	@echo "... ex02/main.s"
 .PHONY : help
 
 

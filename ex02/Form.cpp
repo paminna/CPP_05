@@ -5,13 +5,13 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(): _gradeToExecute(0), _gradeToSign(0), _name("noname")
+Form::Form(): _name("noname"), _gradeToSign(0), _gradeToExecute(0)
 {
     _isSigned = false;
     std::cout << "Constructor for Form called" << std::endl;
 }
 
-Form::Form(int gradeToSign, int gradeToExecute, std::string name) : _gradeToExecute(gradeToExecute), _gradeToSign(gradeToSign), _name(name)
+Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
     if (_gradeToExecute < 1 || _gradeToSign < 1)
         throw Form::GradeTooHighException();
@@ -19,17 +19,16 @@ Form::Form(int gradeToSign, int gradeToExecute, std::string name) : _gradeToExec
         throw Form::GradeTooLowException();
 }
 
-Form::Form(Form &form) : _gradeToSign(form._gradeToSign), _gradeToExecute(form._gradeToExecute), _name(form._name)
-{
-    _isSigned = form._isSigned;
+Form::Form(Form &form): _name(form._name), _gradeToSign(form._gradeToSign), _gradeToExecute(form._gradeToExecute) {
+    *this = form;
 }
 
-const int Form::getGradeToExecute()
+int Form::getGradeToExecute() const
 {
     return _gradeToExecute;
 }
 
-const int Form::getGradeToSign()
+int Form::getGradeToSign() const
 {
     return _gradeToSign;
 }
@@ -79,7 +78,7 @@ void Form::beSigned(Bureaucrat &bureaucrat)
         _isSigned = true;
 }
 
-std::ostream& operator<< (std::ostream &out, Form form)
+std::ostream& operator<< (std::ostream &out, Form &form)
 {
     out << "Form name " << form.getName() << std::endl;
     out << "Form grade to sign " << form.getGradeToSign() << std::endl;
@@ -88,10 +87,10 @@ std::ostream& operator<< (std::ostream &out, Form form)
     return out;
 }
 
-void Form::execute (Bureaucrat const &executor) const
+void Form::execute(Bureaucrat const & executor) const
 {
     if (executor.getGrade() > _gradeToSign)
         throw Form::GradeTooLowException();
-    else
+    if (!this->_isSigned)
         throw Form::FormIsNotSigned();
 }

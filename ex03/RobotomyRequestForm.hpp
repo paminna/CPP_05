@@ -8,7 +8,7 @@
 #include "Form.hpp"
 #include <iostream>
 
-class RobotomyRequestForm {
+class RobotomyRequestForm: public Form {
 public:
     RobotomyRequestForm();
     RobotomyRequestForm(RobotomyRequestForm &s);
@@ -19,7 +19,7 @@ public:
     void execute (Bureaucrat const &executor) const;
 private:
     std::string _target;
-    void isRobotomized();
+    void isRobotomized() const;
 };
 
 

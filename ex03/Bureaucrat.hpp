@@ -8,6 +8,10 @@
 
 #include <iostream>
 
+#include "Form.hpp"
+
+class Form;
+
 class Bureaucrat {
 public:
     Bureaucrat();
@@ -28,13 +32,11 @@ public:
     {
         const char *what() const throw();
     };
-    void executingForm(Form const &form);
+    void executingForm(const Form &form);
 private:
     const std::string _name;
     int _grade;
 };
-
-
 std::ostream& operator<< (std::ostream &out, const Bureaucrat &b);
 
 #endif //CPP_05_BUREAUCRAT_HPP

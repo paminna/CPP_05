@@ -1,38 +1,33 @@
 //
 // Created by Регина on 09.01.2022.
 //
-
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(): _gradeToExecute(0), _gradeToSign(0), _name("noname")
+Form::Form(int gradeToSign, int gradeToExecute, std::string name) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
     _isSigned = false;
-    std::cout << "Constructor for Form called" << std::endl;
-}
-
-Form::Form(int gradeToSign, int gradeToExecute, std::string name) : _gradeToExecute(gradeToExecute), _gradeToSign(gradeToSign), _name(name)
-{
     if (_gradeToExecute < 1 || _gradeToSign < 1)
         throw Form::GradeTooHighException();
     else if (_gradeToSign > 150 || _gradeToExecute > 150)
         throw Form::GradeTooLowException();
 }
 
-Form::Form(Form &form) : _gradeToSign(form._gradeToSign), _gradeToExecute(form._gradeToExecute), _name(form._name)
+Form::Form(Form &form) : _name(form._name), _gradeToSign(form._gradeToSign), _gradeToExecute(form._gradeToExecute)
 {
     _isSigned = form._isSigned;
 }
 
-const int Form::getGradeToExecute()
+int Form::getGradeToSign() const
+{
+    return _gradeToSign;
+}
+
+int Form::getGradeToExecute() const
 {
     return _gradeToExecute;
 }
 
-const int Form::getGradeToSign()
-{
-    return _gradeToSign;
-}
 
 bool Form::getSigned()
 {

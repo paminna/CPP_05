@@ -16,10 +16,10 @@ public:
     Form &operator=(const Form &form);
     ~Form();
 
-    const int getGradeToSign();
+    int getGradeToSign() const;
     bool getSigned();
     const std::string getName();
-    const int getGradeToExecute();
+    int getGradeToExecute() const;
     void beSigned(Bureaucrat &bureaucrat);
     struct GradeTooHighException : public  std::exception
     {

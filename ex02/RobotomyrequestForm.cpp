@@ -9,15 +9,9 @@ RobotomyRequestForm::RobotomyRequestForm()
     std::cout << "Constructor for RobotomyrequestForm called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &s)
-{
-    _target = s._target;
-}
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &s) : Form(s){}
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target)
-{
-    _target = target;
-}
+RobotomyRequestForm::RobotomyRequestForm(std::string name) : Form(name, 72, 45){}
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm &r)
 {
@@ -30,18 +24,8 @@ RobotomyRequestForm::~RobotomyRequestForm()
     std::cout << "Destructor for RobotomyrequestForm called" << std::endl;
 }
 
-//void RobotomyRequestForm::makeSomeNoize(Form &form)
-//{
-//    if (form.getGradeToSign() < 72 && form.getGradeToExecute() < 45)
-//    {
-//        std::cout << "Bububu bibibi bububu bibibi" << std::endl;
-//        isRobotomized();
-//    }
-//    else
-//        Form::GradeTooLowException();
-//}
 
-void RobotomyRequestForm::isRobotomized()
+void RobotomyRequestForm::isRobotomized() const
 {
     int ran = std::rand();
     if (ran % 2)
@@ -50,14 +34,13 @@ void RobotomyRequestForm::isRobotomized()
         std::cout << _target << " faled robotomized" << std::endl;
 }
 
-void RobotomyRequestForm::execute (Bureaucrat const &executor) const
-{
+void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
     Form::execute(executor);
-    if (form.getGradeToSign() < 72 && form.getGradeToExecute() < 45)
+    if (this->getGradeToSign() < 72 && this->getGradeToExecute() < 45)
     {
         std::cout << "Bububu bibibi bububu bibibi" << std::endl;
         isRobotomized();
     }
     else
-        Form::GradeTooLowException();
+        throw Form::GradeTooLowException();
 }

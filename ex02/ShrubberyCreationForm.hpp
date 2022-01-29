@@ -8,7 +8,7 @@
 #include "Form.hpp"
 #include <fstream>
 
-class ShrubberyCreationForm {
+class ShrubberyCreationForm: public Form {
 public:
     ShrubberyCreationForm();
     ShrubberyCreationForm(std::string target);
@@ -18,12 +18,9 @@ public:
     void execute (Bureaucrat const &executor) const;
     void execute(Form &form);
 
-    struct FileError: public std::exception()
-    {
-        const char * what() const throw();
-    };
+    struct FileError: public std::exception {const char * what() const throw(); };
 private:
-    void CreateTree();
+    void CreateTree() const;
     std::string _target;
 };
 

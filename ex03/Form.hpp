@@ -6,20 +6,21 @@
 #define CPP_05_FORM_HPP
 
 #include "Bureaucrat.hpp"
+class Bureaucrat;
 #include <iostream>
 
-abstract class Form {
+class Form {
 public:
     Form();
-    Form(int gradeToSign, int gradeToExecute, std::string name);
+    Form(std::string name, int gradeToSign, int gradeToExecute);
     Form(Form &form);
     Form &operator=(const Form &form);
     ~Form();
 
-    const int getGradeToSign();
+    int getGradeToSign() const;
     bool getSigned();
     const std::string getName();
-    const int getGradeToExecute();
+    int getGradeToExecute() const;
     void beSigned(Bureaucrat &bureaucrat);
     void execute (Bureaucrat const &executor) const;
     struct GradeTooHighException : public  std::exception

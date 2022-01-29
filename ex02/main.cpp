@@ -5,47 +5,57 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
-//    try
-//    {
-//        Form *form = new Form(4, 3, "Form");
-//        Bureaucrat *bur = new Bureaucrat("John", 3);
-//        std::cout << bur->getName() << std::endl;
-//        std::cout << bur->getGrade() << std::endl;
-//        bur->incrementGrade();
-//        std::cout << bur->getGrade() << std::endl;
-//        bur->decrementGrade();
-//        std::cout << bur->getGrade() << std::endl;
-//        form->beSigned(*bur);
-//        std::cout << form->getSigned() << std::endl;
-//    }
-//    catch (std::exception & e)
-//    {
-//        std::cout << e.what() << std::endl;
-//    }
-//
-//    try
-//    {
-//        Bureaucrat *bure = new Bureaucrat("Ron", 151);
-//        std::cout << bure->getGrade() <<std::endl;
-//    }
-//    catch (std::exception & e)
-//    {
-//        std::cout << e.what() << std::endl;
-//    }
-//
-//    try
-//    {
-//        Bureaucrat *b = new Bureaucrat("Ron", 0);
-//        std::cout << b->getGrade() <<std::endl;
-//    }
-//    catch (std::exception & e)
-//    {
-//        std::cout << e.what() << std::endl;
-//    }
+    try { Bureaucrat bureaucrat("Bob", 151); }
+    catch (std::exception &e) { std::cout << e.what(); }
 
-RobotomyRequestForm r = new RobotomyRequestForm();
-r.isRobotomized();
+    try { Bureaucrat bureaucrat("Bob", 0); }
+    catch (std::exception &e) { std::cout << e.what(); }
+
+    try { Bureaucrat bureaucrat("Bob", 1); bureaucrat.decrementGrade(); }
+    catch (std::exception &e) { std::cout << e.what(); }
+
+    try { Bureaucrat bureaucrat("Bob", 150); bureaucrat.incrementGrade(); }
+    catch (std::exception &e) { std::cout << e.what(); }
+
+    Bureaucrat bureaucrat("Bob", 5);
+    std::cout << bureaucrat << std::endl;
+
+    try { Form form("28C", 0, 125); }
+    catch (std::exception &e) { std::cout << e.what(); }
+    try { Form form("28C", 139, 151); }
+    catch (std::exception &e) { std::cout << e.what(); }
+
+    try {
+        Form form("28C", 12, 125);
+        form.beSigned(bureaucrat);
+        std::cout << form << std::endl;
+    } catch (std::exception &e) { std::cout << e.what(); }
+
+    ShrubberyCreationForm shrubberyCreationForm("shrubberyCreationForm");
+    try { shrubberyCreationForm.execute(bureaucrat); }
+    catch (std::exception &e) { std::cout << e.what(); }
+    try { Bureaucrat bureaucrat1("Henry", 150); shrubberyCreationForm.execute(bureaucrat1); }
+    catch (std::exception &e) { std::cout << e.what(); }
+    bureaucrat.signForm(shrubberyCreationForm);
+//    shrubberyCreationForm.execute(bureaucrat);
+
+    std::cout << std::endl;
+
+    RobotomyRequestForm robotomyRequestForm("robotomyRequestForm");
+    bureaucrat.signForm(robotomyRequestForm);
+    try { robotomyRequestForm.execute(bureaucrat); }
+    catch (std::exception &e) { std::cout << e.what(); }
+
+    std::cout << std::endl;
+    PresidentialPardonForm presidentialPardonForm("presidentialPardonForm");
+    bureaucrat.signForm(presidentialPardonForm);
+    try { Bureaucrat bureaucrat2("Milly", 150); presidentialPardonForm.execute(bureaucrat2); }
+    catch (std::exception &e) { std::cout << e.what(); }
+//    presidentialPardonForm.execute(bureaucrat);
+    return 0;
 }

@@ -1,0 +1,25 @@
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/regina/Desktop/CPP_05/ex02/Bureaucrat.cpp" "/Users/regina/Desktop/CPP_05/cmake-build-debug/CMakeFiles/ex02.dir/ex02/Bureaucrat.cpp.o"
+  "/Users/regina/Desktop/CPP_05/ex02/Form.cpp" "/Users/regina/Desktop/CPP_05/cmake-build-debug/CMakeFiles/ex02.dir/ex02/Form.cpp.o"
+  "/Users/regina/Desktop/CPP_05/ex02/PresidentialPardonForm.cpp" "/Users/regina/Desktop/CPP_05/cmake-build-debug/CMakeFiles/ex02.dir/ex02/PresidentialPardonForm.cpp.o"
+  "/Users/regina/Desktop/CPP_05/ex02/RobotomyRequestForm.cpp" "/Users/regina/Desktop/CPP_05/cmake-build-debug/CMakeFiles/ex02.dir/ex02/RobotomyRequestForm.cpp.o"
+  "/Users/regina/Desktop/CPP_05/ex02/ShrubberyCreationForm.cpp" "/Users/regina/Desktop/CPP_05/cmake-build-debug/CMakeFiles/ex02.dir/ex02/ShrubberyCreationForm.cpp.o"
+  "/Users/regina/Desktop/CPP_05/ex02/main.cpp" "/Users/regina/Desktop/CPP_05/cmake-build-debug/CMakeFiles/ex02.dir/ex02/main.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
+
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  )
+
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

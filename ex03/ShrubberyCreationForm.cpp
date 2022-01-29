@@ -9,43 +9,31 @@ ShrubberyCreationForm::ShrubberyCreationForm()
     std::cout << "Constructor for ShruberyCreationForm called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
-{
-    _target = target;
-}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : Form(name, 145, 137){}
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &s)
-{
-    _target = s._target;
-    return *this;
-}
-
-ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm &s)
-{
-    _target = s._target;
-}
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &s) : Form(s) {}
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
     std::cout << "Destructor for ShrubberyCreationForm called" << std::endl;
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const &executor)
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
     Form::execute(executor);
-    if (form.getGradeToExecute() < 137 && form.getGradeToSign() < 145)
-        this->CreateTree();
+    if (this->getGradeToExecute() < 137 && this->getGradeToSign() < 145)
+        CreateTree();
     else
         Form::GradeTooLowException();
 }
 
-void ShrubberyCreationForm::CreateTree()
+void ShrubberyCreationForm::CreateTree() const
 {
-    ofstream fout("./" + _target);
+    std::ofstream fout("./" + _target);
     fout << "          ^            \n"
-            "         /@\           \n"
-            "        /@@@\          \n"
-            "       /@@@@@\         \n"
+            "         /@'\'           \n"
+            "        /@@@'\'          \n"
+            "       /@@@@@'\'         \n"
             "         |@|           \n";
     fout.close();
 }

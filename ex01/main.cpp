@@ -18,6 +18,7 @@ int main()
         bur->decrementGrade();
         std::cout << bur->getGrade() << std::endl;
         form->beSigned(*bur);
+        std::cout << "is signed" << std::endl;
         std::cout << form->getSigned() << std::endl;
     }
     catch (std::exception & e)

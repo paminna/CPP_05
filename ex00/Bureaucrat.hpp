@@ -19,6 +19,7 @@ public:
     int getGrade() const;
     void incrementGrade();
     void decrementGrade();
+
     struct GradeTooHighException : public  std::exception
     {
         const char *what() const throw();
